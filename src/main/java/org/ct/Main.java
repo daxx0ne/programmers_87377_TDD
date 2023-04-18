@@ -1,7 +1,15 @@
 package org.ct;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+}
+
+class Solution {
+    public String[] solution(int[][] line) {
+        String[] answer = {};
+        return answer;
+    }
+
+    public int[] intersection(int[] line1, int[] line2) {
+        return null;
     }
 }
