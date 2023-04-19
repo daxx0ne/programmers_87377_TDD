@@ -1,8 +1,8 @@
 package org.ct.p87377;
 
+import org.ct.Ut;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -170,7 +170,7 @@ class Points implements Iterable<Point> {
         return data.stream();
     }
 
-    Point getMinPoint() {
+    private Point getMinPoint() {
         long x = Long.MAX_VALUE;
         long y = Long.MAX_VALUE;
 
@@ -182,7 +182,7 @@ class Points implements Iterable<Point> {
         return Point.of(x, y);
     }
 
-    Point getMaxPoint() {
+    private Point getMaxPoint() {
         long x = Long.MIN_VALUE;
         long y = Long.MIN_VALUE;
 
@@ -194,7 +194,7 @@ class Points implements Iterable<Point> {
         return Point.of(x, y);
     }
 
-    Points positivePoints() {
+    private Points positivePoints() {
         Point minPoint = getMinPoint();
 
         return Points.of(
@@ -204,7 +204,7 @@ class Points implements Iterable<Point> {
         );
     }
 
-    char[][] emptyMatrix() {
+    private char[][] emptyMatrix() {
         Point minPoint = getMinPoint();
         Point maxPoint = getMaxPoint();
 
@@ -225,12 +225,5 @@ class Points implements Iterable<Point> {
         points.forEach(p -> matrix[(int) p.y][(int) p.x] = '*');
 
         return matrix;
-    }
-}
-
-class Ut {
-    public static IntStream revRange(int from, int to) {
-        return IntStream.range(from, to)
-                .map(i -> to - i + from - 1);
     }
 }

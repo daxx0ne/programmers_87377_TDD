@@ -139,7 +139,10 @@ public class SolutionTests {
     @DisplayName("minPoint, [Point.of(1, 1), Point.of(-1, 1)]")
     void t03() {
         assertThat(
-                Points.of(Point.of(1, 1), Point.of(-1, 1)).getMinPoint()
+                (Point) TestUt.call(
+                        Points.of(Point.of(1, 1), Point.of(-1, 1)),
+                        "getMinPoint"
+                )
         ).isEqualTo(
                 Point.of(-1, 1)
         );
@@ -149,7 +152,10 @@ public class SolutionTests {
     @DisplayName("minPoint, [Point.of(-5, 1), Point.of(-1, -7)]")
     void t03_2() {
         assertThat(
-                Points.of(Point.of(-5, 1), Point.of(-1, -7)).getMinPoint()
+                (Point) TestUt.call(
+                        Points.of(Point.of(-5, 1), Point.of(-1, -7)),
+                        "getMinPoint"
+                )
         ).isEqualTo(
                 Point.of(-5, -7)
         );
@@ -159,7 +165,10 @@ public class SolutionTests {
     @DisplayName("maxPoint, [Point.of(1, 1), Point.of(-1, 1)]")
     void t04() {
         assertThat(
-                Points.of(Point.of(1, 1), Point.of(-1, 1)).getMaxPoint()
+                (Point) TestUt.call(
+                        Points.of(Point.of(1, 1), Point.of(-1, 1)),
+                        "getMaxPoint"
+                )
         ).isEqualTo(
                 Point.of(1, 1)
         );
@@ -169,7 +178,10 @@ public class SolutionTests {
     @DisplayName("maxPoint, [Point.of(4, 1), Point.of(-1, 6)]")
     void t04_2() {
         assertThat(
-                Points.of(Point.of(4, 1), Point.of(-1, 6)).getMaxPoint()
+                (Point) TestUt.call(
+                        Points.of(Point.of(4, 1), Point.of(-1, 6)),
+                        "getMaxPoint"
+                )
         ).isEqualTo(
                 Point.of(4, 6)
         );
@@ -179,7 +191,10 @@ public class SolutionTests {
     @DisplayName("emptyMatrix, [Point.of(1, 1), Point.of(-1, 1)]")
     void t05() {
         assertThat(
-                Points.of(Point.of(1, 1), Point.of(-1, 1)).emptyMatrix()
+                (char[][]) TestUt.call(
+                        Points.of(Point.of(1, 1), Point.of(-1, 1)),
+                        "emptyMatrix"
+                )
         ).isEqualTo(
                 new char[][]{
                         {'.', '.', '.'}
@@ -191,7 +206,10 @@ public class SolutionTests {
     @DisplayName("emptyMatrix, [Point.of(4, -7), Point.of(-1, 6)]")
     void t05_2() {
         assertThat(
-                Points.of(Point.of(4, -7), Point.of(-1, 6)).emptyMatrix()
+                (char[][]) TestUt.call(
+                        Points.of(Point.of(4, -7), Point.of(-1, 6)),
+                        "emptyMatrix"
+                )
         ).isEqualTo(
                 new char[][]{
                         {'.', '.', '.', '.', '.', '.'},
@@ -216,7 +234,10 @@ public class SolutionTests {
     @DisplayName("positivePoints, [Point.of(1, 1), Point.of(-1, 1)]")
     void t06() {
         assertThat(
-                Points.of(Point.of(1, 1), Point.of(-1, 1)).positivePoints()
+                (Points) TestUt.call(
+                        Points.of(Point.of(1, 1), Point.of(-1, 1)),
+                        "positivePoints"
+                )
         ).isEqualTo(
                 Points.of(Point.of(2, 0), Point.of(0, 0))
         );
@@ -226,7 +247,10 @@ public class SolutionTests {
     @DisplayName("positivePoints, [Point.of(4, -7), Point.of(-1, 6)]")
     void t06_2() {
         assertThat(
-                Points.of(Point.of(4, -7), Point.of(-1, 6)).positivePoints()
+                (Points) TestUt.call(
+                        Points.of(Point.of(4, -7), Point.of(-1, 6)),
+                        "positivePoints"
+                )
         ).isEqualTo(
                 Points.of(Point.of(5, 0), Point.of(0, 13))
         );
